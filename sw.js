@@ -14,7 +14,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "4ae2bd0e39e25dc2c51c87bcb316cf99"
+    "revision": "054c48dae10dcc6c29fc1a7cdb77a072"
   },
   {
     "url": "lib/workbox.4.3.1/workbox-background-sync.dev.js",
@@ -142,7 +142,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "sw-config.js",
-    "revision": "6b0c6a1ad115276ea18687c2d3015544"
+    "revision": "270cbe7d832f40e94e99748e736163db"
   },
   {
     "url": "workbox-config.js",
