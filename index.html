@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="Description" content="MyProject is very fast">
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    ​
+    <title>My Project</title>
+    ​
+    <link rel="manifest" href="manifest.json"> <!-- this is what we do on step 7 -->
+    <link rel="apple-touch-icon" href="img/logo-192.png"> <!-- if you skip this, icon won't appear on iPhone -->
+    <link rel="styleheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+
+
+        <!-- <span v-if="message==1">Aizal</span>
+        <span v-else>Manan</span> -->
+
+        <!-- <template v-if="umur<30">
+            Aizal
+        </template>
+
+        <template v-else>
+            Manan
+        </template> -->
+
+        <!-- <span :id="umur<30?'A':'B'"></span> -->
+
+        <!-- <span :class="{'yellow':umur<30, 'green':umur>=30}"></span> -->
+
+        <!-- <input type="text" v-model="input1">   -   <input type="text" v-model="input2">  = <span :class="input1-input2>=0?'positive':'neg'">{{input1 - input2}}</span> -->
+
+        <!-- <span type="text" v-for="(item,i) in items" >{{i}} : {{item}} </span> -->
+        <!-- <div class="row">
+            <div v-for="(item,i) in items">
+                <input type="text" class="desc"> <input type="text" v-model="items[i]" @input="total()">
+            </div>
+
+            <button @click="addRow()">ADD</button>
+            <br>TOTAL : {{
+                ttl
+            }} -->
+
+
+        <router-link to="/foo" class="nav-button">Go to Foo</router-link>
+        <router-link to="/bar" class="nav-button">Go to Bar</router-link>
+        <br>
+        <br>
+        <div>{{$route.name}}</div>
+        <div v-if="$route.name=='foo'">
+            This is page Foo
+        </div>
+        <div v-if="$route.name=='bar'">
+            This is page Bar
+        </div>
+        <div v-if="$route.name=='notfound'">
+            Sorry page not found
+        </div>
+    </div>
+
+
+
+    </div>
+    <script>
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+            })
+        }
+
+        // var app = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         message: 'Umur saye',
+        //         umur: 32,
+        //     }
+        // })
+
+        // var app = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         items: [],
+        //         desc: [''],
+        //         price: [0],
+        //         ttl: 0
+        //     },
+        //     methods: {
+        //         addRow: function () {
+        //             this.items.push(1);
+        //             this.total();
+        //         },
+        //         total: function () {
+        //             this.ttl = this.items.reduce(function (a, b) { return Number(a) + Number(b) }, 0);
+        //         }
+        //     }
+        // })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Umur saye',
+                umur: 32,
+            },
+            router: new VueRouter({
+                routes: [
+                    { path: '/', redirect: "/foo" },
+                    { path: '/foo', name: "foo" },
+                    { path: '/bar', name: "bar" },
+                    { path: '/notfound', name: "notfound" },
+                    { path: '**', redirect: "/notfound" },
+                ]
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

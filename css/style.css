@@ -1,0 +1,29 @@
+.positive {
+    color: green;
+}
+
+.neg {
+    color: red;
+}
+
+.desc {
+    width: 200px;
+    display: inline-block;
+}
+
+.row {
+    margin: 2px 0px;
+}
+
+.nav-button {
+    padding: 5px;
+    border-radius: 4px;
+    margin: 2px;
+    text-decoration: none;
+    background: gray;
+    color: white;
+}
+
+.nav-button:hover{
+    background: black;
+}
