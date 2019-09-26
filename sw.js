@@ -1,4 +1,4 @@
-importScripts('lib/workbox.4.0.0/workbox-sw.js');
+importScripts('lib/workbox.4.3.1/workbox-sw.js');
 workbox.precaching.precacheAndRoute([
   {
     "url": "css/style.css",
